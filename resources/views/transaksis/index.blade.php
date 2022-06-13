@@ -76,7 +76,7 @@
                             <tr>
                                 <td>{{ $transaksi->kategoris->jenis_kategori }}</td>
                                 <td>{{ $transaksi->kategoris->nama_kategori }}</td> 
-                                <td>{{substr( $transaksi->deskripsi,0,20) }}</td>
+                                <td>{{substr( $transaksi->deskripsi,0,20) }}</td> 
                                 <td>{{ $transaksi->nominal }}</td>
                                 <td class="text-center">
                                     <form onsubmit="return confirm('Apakah Anda Yakin ?');"

@@ -13,13 +13,14 @@ class TransaksiController extends Controller
 {
     public function index()
     {
+        $bulan = Carbon::now()->format('m'); 
+
         if (request()->start_date || request()->end_date) {
             $start_date = Carbon::parse(request()->start_date)->toDateTimeString();
             $end_date = Carbon::parse(request()->end_date)->toDateTimeString();
             $transaksis = Transaksi::whereBetween('created_at', [$start_date, $end_date])->get();
         } else {
-            // $data = Transaksi::latest()->get();
-            $transaksis = Transaksi::latest()->get();
+            $transaksis = Transaksi::WhereMonth('created_at', [$bulan])->get(); 
         }
 
         return view('transaksis.index', compact('transaksis'));
