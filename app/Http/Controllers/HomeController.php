@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Kategori;
 use App\Models\Transaksi; 
 
+
 class HomeController extends Controller
 {
     public function __construct()

@@ -11,6 +11,13 @@ use Carbon\Carbon;
 
 class TransaksiController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->Kategori = new Kategori();
+        $this->Transaksi = new Transaksi();
+    }
+
     public function index()
     {
         $bulan = Carbon::now()->format('m'); 

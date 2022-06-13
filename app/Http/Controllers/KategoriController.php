@@ -8,6 +8,10 @@ use Illuminate\Support\Str;
 
 class KategoriController extends Controller
 {
+    public function __construct()
+    {
+        $this->Kategori = new Kategori();
+    }
     public function index()
     {
         $kategoris = Kategori::latest()->get();
